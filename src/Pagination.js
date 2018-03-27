@@ -48,7 +48,11 @@ class PaginationView extends Component {
         return(
             <div>
                 <h3>Beautiful Spaces</h3>
-                <Pagination onChange={this.handleChange} defaultCurrent={this.state.currentPage} total={this.state.total}/> 
+                <Pagination 
+                    onChange={this.handleChange} 
+                    defaultCurrent={this.state.currentPage} 
+                    total={this.state.total}
+                    pageSize={9}/> 
                 <div className="pagination-container">
                 {
                     this.state.listings.map((listing)=>{
