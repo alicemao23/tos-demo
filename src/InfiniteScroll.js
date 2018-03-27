@@ -29,11 +29,9 @@ class InfiniteScroll extends Component {
                     currentPage: this.state.currentPage+1,
                 })
             }).catch(err =>{
-                if (err.status === 404){
                     this.setState({
                         end: true
                     })
-                }
             })
         }
 
