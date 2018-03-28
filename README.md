@@ -4,6 +4,8 @@ I've completed both infinity scroll and paginate view. You can view both compone
 ## Set Up 
 This challenge was completed using ReactJS. The repo is created with create-react-app. Please use npm to install the packages using 'npm install', then simply use 'npm start' to run the app. 
 
+You can also visit the deployed version at https://tos-listing-demo.herokuapp.com/
+
 ## UI Library 
 
 I implemented ant-design library as it contains simple to use ui elements for ReactJS in order to quickly add some styling to each page. 
