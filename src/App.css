@@ -2,50 +2,45 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-.pagination-container{
+.pagination-body{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-flow: row wrap;
+  width: 80vw; 
+  margin: 0 auto;
 }
+
 .nav{
   display: flex; 
   justify-content: space-between; 
-  align-items: center;
   font-family: Roboto, sans-serif;
+  padding: 0 20px;
+  align-items: center;
+  min-height: 65px;
 }
 .nav-container {
   list-style: none;
   display: flex; 
+  margin: 0;
 }
 
-.nav-container li {
-  /* float: right; */
+.nav .logo{
+  font-size: 25px; 
+  color: #2c2c2e;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-item, .nav-item:hover, .nav-item:focus {
+  color: #7b7b7b; 
+  font-size: 15px; 
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.pagination-container .ant-pagination {
+  margin-bottom: 20px;
 }
 
 .ant-carousel .slick-slide {
@@ -58,4 +53,24 @@
 
 .ant-carousel .slick-slide h3 {
   color: #fff;
+}
+
+.ant-carousel img {
+  height: 91vh;
+  width: 100%;
+}
+
+.listing-item{
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .listing-item{
+    width: 45%
+  }
+}
+@media only screen and (min-width: 992px) {
+  .listing-item{
+    width: 30%
+  }
 }

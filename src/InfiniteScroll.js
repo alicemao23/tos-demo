@@ -15,7 +15,6 @@ class InfiniteScroll extends Component {
             isLoading: false, 
             end: false
         }
-
     }
 
     fetchListings(){
@@ -23,11 +22,11 @@ class InfiniteScroll extends Component {
             axios.get(`${baseURL}${this.state.currentPage+1}}`)
             .then((res)=>{
                 this.setState({
-                    total: res.data.total, 
                     listings: this.state.listings.concat(res.data.data), 
                     isLoading: false, 
                     currentPage: this.state.currentPage+1,
-                })
+
+                },()=>console.log(this.state))
             }).catch(err =>{
                     this.setState({
                         end: true
@@ -51,9 +50,10 @@ class InfiniteScroll extends Component {
     }
 
     onScroll = () => {
+        console.log((window.innerHeight + window.scrollY),  (document.body.scrollHeight), document.body.offsetHeight )
         if (
-          (window.innerHeight + window.scrollY) >= (document.body.scrollHeight) &&
-          this.state.listings.length
+          (window.innerHeight + window.scrollY - 350) >= (document.body.scrollHeight - 350) &&
+          this.state.listings.length && !this.state.loading
         ) {
             this.setState({
                 isLoading: true
@@ -64,8 +64,8 @@ class InfiniteScroll extends Component {
     render(){
         return(
             <div>
-                <h3>Beautiful Spaces</h3>
-                <div className="pagination-container">
+                <h1>Beautiful Spaces</h1>
+                <div className="pagination-body">
                     {
                         this.state.listings.map((listing)=>{
                             return <Listing key={listing.id} listing={listing} />

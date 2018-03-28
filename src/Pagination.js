@@ -39,21 +39,22 @@ class PaginationView extends Component {
         }
     }
 
-    handleChange = (page)=> {
+    handleChange = (page, type, originalElement)=> {
+        console.log('hello', page)
         this.setState({
             currentPage: page
         })
     }
     render() {
         return(
-            <div>
-                <h3>Beautiful Spaces</h3>
+            <div className="pagination-container">
+                <h1>Beautiful Spaces</h1>
                 <Pagination 
                     onChange={this.handleChange} 
                     defaultCurrent={this.state.currentPage} 
                     total={this.state.total}
-                    pageSize={9}/> 
-                <div className="pagination-container">
+                    /> 
+                <div className="pagination-body">
                 {
                     this.state.listings.map((listing)=>{
                         return <Listing key={listing.id} listing={listing} />

@@ -5,12 +5,12 @@ class Nav extends Component {
     render() {
         return(
             <nav className="nav">
-                <div className="logo">
+                <Link className="logo" to="/">
                     <span>thisopenspace</span>
-                </div>
+                </Link>
                 <ul className="nav-container">
-                    <li><Link to="/paginate">Pagination View</Link></li>
-                    <li><Link to="/infinite">Infinity View</Link></li>
+                    <li><Link className="nav-item" to="/paginate">Pagination View</Link></li>
+                    <li><Link className="nav-item" to="/infinite">Scroll View</Link></li>
                 </ul>
 
             </nav>

@@ -14,7 +14,6 @@ class App extends Component {
             <Route exact path='/' render={()=><Home />}/>
             <Route path="/paginate" render={()=><Pagination/>}/>
             <Route path="/infinite" render={()=><InfiniteScroll />}/>
-
           </Switch>
       </div>
     );
